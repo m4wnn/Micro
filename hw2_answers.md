@@ -13,7 +13,7 @@ An agent lives for two periods and chooses how much to work and consume each per
 The agent enjoys both consumption and leisure. Her lifetime utility is $u(x_1, x_2, l_1, l_2) = \log (x_1l_1) + \beta \log (x_2l_2)$.  
 Where $\beta \in (0,1)$ reflects her impatience.
 
-a. The interest rate is given by $r$, so $\$1$ at time $t=1$ is worth $\$(1+r)$ at time $t=2$. Write down the agent's lifetime budget constraint.
+a. The interest rate is given by $r$, so $1$ dollar at time $t=1$ is worth $(1+r)$ dollars at time $t=2$. Write down the agent's lifetime budget constraint.
 
 In period $t=1$
 

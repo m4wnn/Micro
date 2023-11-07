@@ -16,22 +16,27 @@ Where $\beta \in (0,1)$ reflects her impatience.
 a. The interest rate is given by $r$, so $\$1$ at time $t=1$ is worth $\$(1+r)$ at time $t=2$. Write down the agent's lifetime budget constraint.
 
 In period $t=1$
+
 $$
 wy - px_1 = s_1
 $$
+ 
 Where $s_1$ are the savings in the period 1.
 
 In period $t=2$
+
 $$
 px_2= (1 + r)s_1 \implies s_1 = \frac{px_2}{1+r}
 $$
 
 Substituting in period one constraint:
+
 $$
 wy - px_1 = \frac{px_2}{1+r} \implies wy = px_1 + \frac{px_2}{1+r} 
 $$
 
 So the budget constraint is
+
 > $$
 > wy = px_1 + \frac{px_2}{1+r} 
 > $$
@@ -49,12 +54,14 @@ b. Write down the agent's utility maximization problem.
 c. Solve for the agent's optimal choices of  $(x_1, x_2, y)$.
 
 Rewriting the utility function in terms of $(x_1, x_2, y)$:
+
 $$
 u(x_1, x_2, y) = \log (x_1(T - y)) + \beta \log (x_2T)\\
 u(x_1, x_2, y) = \log (x_1) + \log (T - y) + \beta \log (x_2) + \beta\log (T)
 $$
 
 The new problem of optimization is:
+
 $$
 \max_{x_1, x_2,y} u(x_1, x_2, y)\\
 s.t.\\
@@ -62,9 +69,11 @@ wy = px_1 + \frac{px_2}{1+r}\\
 $$
 
 Given the rewrite optimization problem, the First Order Condition for the lagrangian is:
+
 $$
 \nabla u(x_1, x_2, y) = \lambda \nabla g(x_1, x_2, y)
 $$
+
 where $g(x_1, x_2, y) = wy - px_1 - \frac{px_2}{1+r}$.
 
 Calculating the partial derivatives: 
@@ -72,9 +81,11 @@ Calculating the partial derivatives:
 $$
 \frac{\partial u}{\partial x_1} = \frac{1}{x_1} \quad ; \quad \frac{\partial g}{\partial x_1} = -p
 $$
+
 $$
 \frac{\partial u}{\partial x_2} = \frac{\beta}{x_2} \quad ; \quad \frac{\partial g}{\partial x_2} = -\frac{p}{1+r}\\
 $$
+
 $$
 \frac{\partial u}{\partial y} = -\frac{1}{T - y} \quad ; \quad \frac{\partial g}{\partial y} = w\\
 $$
@@ -84,9 +95,11 @@ Applying the F.O.C.:
 $$
 \frac{1}{x_1} = -p\lambda \implies -\frac{1}{px_1} = \lambda
 $$
+
 $$
 \frac{\beta}{x_2} = -\lambda\frac{p}{1+r} \implies -\frac{\beta(1+r)}{px_2} = \lambda
 $$
+
 $$
 -\frac{1}{T - y} = \lambda w \implies -\frac{1}{w(T - y)} = \lambda
 $$
@@ -96,34 +109,43 @@ Reducing the system in two equations:
 $$
 -\frac{1}{px_1} = -\frac{\beta(1+r)}{px_2} \implies x_2 = \beta(1+r)x_1
 $$
+
 $$
 -\frac{1}{px_1} = -\frac{1}{w(T - y)} \implies  y = T - \frac{px_1}{w}
 $$
 
 Substitute in the budget constraint.
+
 $$
 wy = px_1 + \frac{px_2}{1+r}
 $$
+
 $$
 w\left(T - \frac{px_1}{w}\right) = px_1 + \frac{p}{1+r}\beta(1+r)x_1
 $$
+
 $$
 wT - px_1 = px_1 + p\beta x_1
 $$
+
 $$
 wT = px_1 + p\beta x_1 + px_1 
 $$
+
 $$
 wT = px_1(2 + \beta)
 $$
 
 So the optimal consumption and time worked are:
+
 >$$
 >x_1 = \dfrac{w}{p}\dfrac{T}{(2 + \beta)}
 >$$
+
 >$$
 >x_2 = T\beta\dfrac{w}{p}\dfrac{(1+r)}{(2 + \beta)}
 >$$
+
 >$$
 >y = T\left(1 - \dfrac{1}{(2 + \beta)}\right)
 >$$
@@ -133,12 +155,15 @@ d. How does an increase in the wage affect their choices? Provide an intuition.
 $$
 -\frac{w}{p} = \dfrac{\frac{\partial u}{\partial y}}{\frac{\partial u}{\partial x_1}}
 $$
+
 $$
 -\frac{w}{p}(1+r) = \dfrac{\frac{\partial u}{\partial y}}{\frac{\partial u}{\partial x_2}}
 $$
+
 $$
 (1+r) = \dfrac{\frac{\partial u}{\partial x_1}}{\frac{\partial u}{\partial x_2}}
 $$
+
 $$
 -\frac{w}{p}\dfrac{\frac{\partial u}{\partial x_1}}{\frac{\partial u}{\partial x_2}}= \dfrac{\frac{\partial u}{\partial y}}{\frac{\partial u}{\partial x_2}}
 $$

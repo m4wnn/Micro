@@ -13,7 +13,7 @@ An agent lives for two periods and chooses how much to work and consume each per
 The agent enjoys both consumption and leisure. Her lifetime utility is $u(x_1, x_2, l_1, l_2) = \log (x_1l_1) + \beta \log (x_2l_2)$.  
 Where $\beta \in (0,1)$ reflects her impatience.
 
-a. The interest rate is given by $r$, so $1$ dollar at time $t=1$ is worth $(1+r)$ dollars at time $t=2$. Write down the agent's lifetime budget constraint.
+**a. The interest rate is given by $r$, so $1$ dollar at time $t=1$ is worth $(1+r)$ dollars at time $t=2$. Write down the agent's lifetime budget constraint.**
 
 In period $t=1$
 
@@ -41,7 +41,7 @@ So the budget constraint is
 > wy = px_1 + \frac{px_2}{1+r} 
 > $$
 
-b. Write down the agent's utility maximization problem.
+**b. Write down the agent's utility maximization problem.**
 
 > $$
 > \max_{x_1, x_2, l_1, l_2} u(x_1, x_2, l_1, l_2)\\
@@ -51,7 +51,7 @@ b. Write down the agent's utility maximization problem.
 > l_2 = T
 > $$
 
-c. Solve for the agent's optimal choices of  $(x_1, x_2, y)$.
+**c. Solve for the agent's optimal choices of  $(x_1, x_2, y)$.**
 
 Rewriting the utility function in terms of $(x_1, x_2, y)$:
 
@@ -150,7 +150,7 @@ So the optimal consumption and time worked are:
 >y = T\left(1 - \dfrac{1}{(2 + \beta)}\right)
 >$$
 
-d. How does an increase in the wage affect their choices? Provide an intuition.
+**d. How does an increase in the wage affect their choices? Provide an intuition.**
 
 $$
 -\frac{w}{p} = \dfrac{\frac{\partial u}{\partial y}}{\frac{\partial u}{\partial x_1}}
@@ -173,7 +173,7 @@ An increase in salary implies that the marginal disutility of labor decreases co
 Ultimately, the best decision is to work the same number of hours, as this ensures the optimal trade-off between consumption in period 1 and period 2.
 
 
-e. How does an increase in the interest rate affect their choices? Provide an intuition.
+**e. How does an increase in the interest rate affect their choices? Provide an intuition.**
 
 An increase in salary implies that the marginal disutility on labor is reduced in the face of the utility of consuming, so in period 1 she has incentives to work less. However, in period 2 there are also the same incentives to increase consumption, which is not possible if she decides to decrease her work in period 1.
 

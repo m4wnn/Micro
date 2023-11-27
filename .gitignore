@@ -1,3 +1,78 @@
 answers.md
 *.html
 *.pdf
+
+# Archivos auxiliares generados por LaTeX
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
+
+# Archivos BibTeX
+*.bbl
+*.blg
+*.brf
+*.bcf
+*.run.xml
+
+# Archivos de índice
+*.idx
+*.ind
+*.ilg
+*.loa
+
+# Otros archivos
+*.thm
+*.loq
+*.lol
+*.tps
+*.synctex.gz
+*.alg
+*.acr
+*.acn
+*.glg
+*.glo
+*.gls
+*.ist
+*.hd
+*.xdy
+
+# Archivos de salida
+*.dvi
+*.ps
+*.pdf
+
+# Archivos de paquetes de LaTeX
+*.sty
+
+# Archivos de clase de LaTeX
+*.cls
+
+# Archivos de fuente de LaTeX
+*.dfu
+*.tex
+
+# Archivos de figuras
+*.fig
+
+# Carpetas de salida de LaTeX
+/_minted-*/
+
+# Otros archivos y carpetas
+*.bak
+*.tmp
+*.swp
+*~
+
+# Carpetas específicas de un IDE o editor
+.vscode/
+.idea/

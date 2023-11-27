@@ -1,0 +1,73 @@
+%\documentclass[letterpaper, twocolumn]{article}
+\documentclass[letterpaper]{article}
+
+% Change the margins to 1 inch all around.
+\usepackage[margin=1in]{geometry}
+
+% font handling
+%\usepackage{fontspec}
+
+% for setting the linespace (\setstretch)
+\usepackage{setspace}
+
+% distance between the columns
+\setlength{\columnsep}{1cm}
+
+% for compactitem
+\usepackage{paralist}
+
+% for comments
+\usepackage{verbatim}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+
+
+\usepackage[
+	sorting=none,
+	minbibnames=8,
+	maxbibnames=9,
+	block=space,
+	backend=biber
+]{biblatex}
+\bibliography{bibliography}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+% Blue text box for answers.
+\newtcolorbox{myanswerbox}[1][]{
+  colback=blue!5!white, % Background color
+  colframe=blue!75!black, % Bourder color
+  fonttitle=\bfseries, %  Font style of the title
+  title=#1, %  Title
+  arc=0mm, %  Rounded corners
+  #1
+}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    backgroundcolor=\color{lightgray}
+}
+
+%=============================
+\input{misc/title}
+%\newpage
+
+%=============================
+\input{sections/question-1}
+\input{sections/question-2}
+\input{sections/question-3}
+\input{sections/question-4}
+\input{sections/question-5}
+
+\end{document}

@@ -1,0 +1,110 @@
+\section{Housing Prices, in Theory}
+
+A unit mass of people indexed by \( v \sim U[0,1] \) must choose to live in either Los Angeles or Kansas City. Each city has housing stock \( 3/4 \), so there is enough housing between the two cities but not in any one city. House prices are determined by a competitive market of landlords; they have no costs if they rent out their house.\\
+
+Agents have utilities \( u_{LA} = b + v - p_{LA} \) and \( u_{KC} = b - p_{KC} \) from living in the two cities, where \( p_{LA} \) and \( p_{KC} \) are the prices of renting in the two cities, \( v \sim U[0,1] \) indicates how much the agent likes California weather, and \( b \) is the benefit of having a house (we assume this is positive, so no-one chooses to be homeless).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (a) Suppose \( p_{LA} = p_{KC} = 0 \). Is this an equilibrium? Is there excess demand/supply in either market?
+\end{tcolorbox}
+
+When \( p_{LA} = p_{KC} = 0 \):
+
+\begin{eqnarray*}
+    \mathbb{E}[u_{LA}] &=& 0.5 + b\\
+    \mathbb{E}[u_{KC}] &=& b\\
+    \mathbb{E}[u_{LA}] &>& \mathbb{E}[u_{KC}]
+\end{eqnarray*}
+
+Furthermore:
+
+\begin{eqnarray*}
+    P(v = 0) &=& 0\\
+\end{eqnarray*}
+
+Because \(v\) is a continuous random variable.\\
+
+Therefore, for every agent, it is preferable to live in Los Angeles, as it is highly unlikely that they have a null preference for the climate of Los Angeles.\\
+
+In this case, the excess demand for housing in Los Angeles is \(1/4\), being this the proportion of the population that must live in Kansas City.\\
+
+This is not an equilibrium because Los Angeles landlords can raise the price of their properties to a point where \(\mathbb{E}[u_{LA}] = \mathbb{E}[u_{KC}]\) and thus maximize their profits.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (b) What are the equilibrium prices \( p_{LA}, p_{KC} \)?
+\end{tcolorbox}
+
+Equilibrium is achieved when:
+
+\begin{eqnarray*}
+    \mathbb{E}[u_{LA}] &=& \mathbb{E}[u_{KC}]\\
+    0.5 + b - p_{LA} &=& b - p_{KC}\\
+\end{eqnarray*}
+
+\begin{equation}
+    p_{LA} = 0.5 + p_{KC}
+    \label{eq:equilibrium}
+\end{equation}
+
+In this case, the exercise of housing choice is equivalent to a Monte Carlo simulation where the proportion of agents living in LA will be the same as those living in KC.\\
+
+Since the cost of renting is zero, and given that landlords in Los Angeles compete with those in Kansas City, the minimum possible price for those in Kansas City is \( p_{KC} = 0 \), making them indifferent between renting or not.
+
+
+\begin{myanswerbox}
+    The equilibrium prices will be:
+    \begin{eqnarray*}
+        p_{LA} &=& 0.5\\
+        p_{KC} &=& 0
+    \end{eqnarray*}
+
+    Thus, the expected proportion of agents living in Los Angeles and Kansas City will be 50\% for each city. Additionally, the landlords in Kansas City will be indifferent between renting or not.
+\end{myanswerbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (c) What happens to house prices in LA and KC if we build a few more houses in LA or KC?
+\end{tcolorbox}
+
+\begin{myanswerbox}
+    Since the addition of housing in either city does not change the cost structure, equation \ref{eq:equilibrium} remains valid, and therefore, the prices will be the same as in the previous clause.
+\end{myanswerbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (d) Suppose we can build new housing at constant marginal cost \( c = 1/10 \) in both cities. What is the long-run equilibrium price? How many people live in each city?
+\end{tcolorbox}
+
+Landlords who already own a house have the incentive to rent at a price at least as high as the marginal cost of construction, thus making new landlords indifferent between building or not.
+
+In equilibrium:
+
+\begin{equation*}
+    p_{LA} = 0.5 + p_{KC}
+\end{equation*}
+
+This condition must be met for agents to be indifferent between living in Los Angeles and Kansas City.\\
+
+\begin{myanswerbox}
+    If \( p_{KC} = 0.1 \), then \( p_{LA} = 0.6 \).\\
+    With this prices, the expected proportion of agents living in each city will be 50\%, landlords in Kansas City will be indifferent between renting or not, there are not incentives form Los Angeles landlords to rise prices, and in both cities new landlords will be indifferent between building or not.
+\end{myanswerbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (e) How much does social welfare increase from the extra building in (d)?
+\end{tcolorbox}
+
+\begin{myanswerbox}
+    In equilibrium, the proportion of agents living in each city is the same. Additionally, the addition of new housing at a marginal cost \( c \) implies an increase in prices by the same magnitude.\\
+
+    Due to the two aforementioned characteristics, the increase in social welfare is zero, as the fall in consumer surplus is exactly equal to the producer's profit increase. This is an example of a zero-sum game, where social welfare is unaffected by changes in the equilibrium price.
+\end{myanswerbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

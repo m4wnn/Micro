@@ -1,1 +1,93 @@
 \section{Housing Prices, in Theory}
+
+A unit mass of people indexed by \( v \sim U[0,1] \) must choose to live in either Los Angeles or Kansas City. Each city has housing stock \( 3/4 \), so there is enough housing between the two cities but not in any one city. House prices are determined by a competitive market of landlords; they have no costs if they rent out their house.\\
+
+Agents have utilities \( u_{LA} = b + v - p_{LA} \) and \( u_{KC} = b - p_{KC} \) from living in the two cities, where \( p_{LA} \) and \( p_{KC} \) are the prices of renting in the two cities, \( v \sim U[0,1] \) indicates how much the agent likes California weather, and \( b \) is the benefit of having a house (we assume this is positive, so no-one chooses to be homeless).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (a) Suppose \( p_{LA} = p_{KC} = 0 \). Is this an equilibrium? Is there excess demand/supply in either market?
+\end{tcolorbox}
+
+When \( p_{LA} = p_{KC} = 0 \), everyone would desire to live in LA, since $b>0$ and $v$ is uniformly distributed on $[0,1]$. This suggest each individual values the additional utility of living in LA. at least a little over living in KC. Therefore $u_{LA}>u_{KC}$. Here we are assuming $v \neq 0$. In the case $v = 0$, the individual will be indifferent.\\
+
+When $p_{LA} = p_{KC} = 0$, all individuals would choose to live in LA. But, housing is enough only for $3/4$ of the population in each city.\\
+
+In LA the demand of housing would be $1$ or the whole population.
+
+\begin{myanswerbox}
+    The excess of demand in LA is $1/4$, and the excees of supply in KC is $3/4$, because only $1/4$ would not be able to live in LA.\\
+
+    $p_{LA} = p_{KC} = 0$ is not an equilibrium, as market does not clear in both cities.
+\end{myanswerbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (b) What are the equilibrium prices \( p_{LA}, p_{KC} \)?
+\end{tcolorbox}
+
+In order to establish indifference condition:
+
+\begin{eqnarray*}
+    u_{LA} &=& u_{KC}\\
+    b + v - p_{LA} &=& b - p_{KC}\\
+\end{eqnarray*}
+
+\begin{equation}
+    v = p_{LA} - p_{KC}
+    \label{eq:indiff}
+\end{equation}
+
+The condition \ref{eq:indiff} tell us the value of $v$ at which individual is indifferentt between living in LA and KC. Individuals with $v$ grater than this value will prefer LA and, on the contrary, individuals with $v$ lower than this value will prefer KC.\\
+
+Since each city can only accommodate $3/4$ of the population, the $v^*$ be the cutoff point that determines the proportion of people preferring LA should be $3/4$ of the population. In Context of a uniform distribution thi is the 75th percentile, which is 0.75:
+
+\begin{eqnarray*}
+    v^* &=& 0.75\\
+    p_{LA} - p_{KC} &=& 0.75\\
+\end{eqnarray*}
+
+\begin{myanswerbox}
+    \begin{equation}
+        p_{LA} = p_{KC} + 0.75
+        \label{eq:price}
+    \end{equation}
+
+    The condition \ref{eq:price} give us a range of possible prices combinations instead of a single unique solution for each cities rental price. 
+\end{myanswerbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (c) What happens to house prices in LA and KC if we build a few more houses in LA or KC?
+\end{tcolorbox}
+
+Regarding the equilibrium condition \ref{eq:indiff},  if housing supply increase in LA ($\Delta H_{LA} > 0$), the price of housing in LA will decrease ($p_{LA_2} < p_{LA_1}$) and the price of housing in KC ($p_{KC_2} = p_{KC_1}$) will remain the same. therefore, the new equilibrium condition will be:
+
+\begin{eqnarray*}
+    v^*_2 &=& p_{LA_2} - p_{KC_2} < v^*_1\\
+\end{eqnarray*}
+
+This mens agents with lower valoration of LA weather might prefer LA over KC, because La becomes more affordable conig those with $v$ value just above the new lower $v^*_2$ will prefer LA.\\
+
+If housing supply in KC increase ($\Delta H_{KC} > 0$), 
+
+\begin{eqnarray*}
+    v^*_2 &=& p_{LA_2} - p_{KC_2} > v^*_1\\
+\end{eqnarray*}
+
+With a higher $v^*_2$, fewer people comy tose with $v$ value above the nwe $v^*_2$ will find LA more a ttractive than KC. Hence more people choose KC.\\
+
+$\Delta s$ in supply in either city, the change in rental prices which in turn shifts the indifference point $v^*$. This shift in the supply the proportion of population preferring one city over the other, based on their valoration of LA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (d) Suppose we can build new housing at constant marginal cost \( c = 1/10 \) in both cities. What is the long-run equilibrium price? How many people live in each city?
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}
+    (e) How much does social welfare increase from the extra building in (d)?
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

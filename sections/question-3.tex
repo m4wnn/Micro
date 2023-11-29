@@ -22,24 +22,64 @@ When \( p_{LA} = p_{KC} = 0 \):
 Furthermore:
 
 \begin{eqnarray*}
-    P(v = 0) &=& 0\\
+    Pr(v = 0) &=& 0\\
 \end{eqnarray*}
+
 
 Because \(v\) is a continuous random variable.\\
 
 Therefore, for every agent, it is preferable to live in Los Angeles, as it is highly unlikely that they have a null preference for the climate of Los Angeles.\\
 
-In this case, the excess demand for housing in Los Angeles is \(1/4\), being this the proportion of the population that must live in Kansas City.\\
+\begin{myanswerbox}
+    In this case, the excess demand for housing in Los Angeles is \(1/4\), being this the proportion of the population that must live in Kansas City.\\
 
-This is not an equilibrium because Los Angeles landlords can raise the price of their properties to a point where \(\mathbb{E}[u_{LA}] = \mathbb{E}[u_{KC}]\) and thus maximize their profits.
+    This is not an equilibrium because Los Angeles landlords can raise the price of their properties to a point where \(\mathbb{E}[u_{LA}] = \mathbb{E}[u_{KC}]\) and thus maximize their profits.
+\end{myanswerbox}
 
+The demand for housing in Los Angeles depends on the proportion of agents who prefer to live there rather than in KC, given the price \( p_{LA} \). This proportion is given by:
+
+
+\begin{eqnarray*}
+    Pr(u_{LA} &>& u_{KC})\\
+    Pr(v + b - p_{LA} &>& b - p_{KC})\\
+    Pr(v &>& p_{LA} - p_{KC})\\
+\end{eqnarray*}
+
+\begin{equation}
+    D_{LA} = Pr(v > p_{LA} - p_{KC})\\
+\end{equation}
+
+\begin{equation}
+    D_{LA} = \begin{cases}
+        0, &  p_{LA} - p_{KC} \geq 1\\
+        1 - (p_{LA} - p_{KC}), & 0 < p_{LA} - p_{KC} < 1\\
+        1, &  p_{LA} - p_{KC} \leq 0\\
+    \end{cases}
+\end{equation}
+
+And the demand for housing in Kansas City is:
+
+\begin{equation}
+    D_{KC} = \begin{cases}
+        0, &  p_{LA} - p_{KC} \leq 0\\
+        (p_{LA} - p_{KC}), & 0 < p_{LA} - p_{KC} < 1\\
+        1, &  p_{LA} - p_{KC} \geq 1\\
+    \end{cases}
+\end{equation}
+
+The supply function for housing in Los Angeles and Kansas City is:
+
+\begin{eqnarray}
+    S_{LA}(p_{LA}) &=& 3/4\\
+    S_{KC}(p_{KC}) &=& 3/4
+\end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tcolorbox}
     (b) What are the equilibrium prices \( p_{LA}, p_{KC} \)?
 \end{tcolorbox}
 
-Equilibrium is achieved when:
+Assuming that landlords in Los Angeles do not know the preferences of the agents (since \( v \) is a random variable), their best strategy is to choose a price such that:
 
 \begin{eqnarray*}
     \mathbb{E}[u_{LA}] &=& \mathbb{E}[u_{KC}]\\
@@ -51,9 +91,9 @@ Equilibrium is achieved when:
     \label{eq:equilibrium}
 \end{equation}
 
-In this case, the exercise of housing choice is equivalent to a Monte Carlo simulation where the proportion of agents living in LA will be the same as those living in KC.\\
+In this case, the exercise of housing choice is equivalent to a Monte Carlo simulation where the proportion of agents living in LA will be the same as those living in KC, and there will be no incentives for LA landlords to raise prices.\\
 
-Since the cost of renting is zero, and given that landlords in Los Angeles compete with those in Kansas City, the minimum possible price for those in Kansas City is \( p_{KC} = 0 \), making them indifferent between renting or not.
+Since the marginal cost of renting is zero, and given that landlords in Los Angeles compete with those in Kansas City, the minimum possible price for those in Kansas City is \( p_{KC} = 0 \), making them indifferent between renting or not.
 
 
 \begin{myanswerbox}
@@ -63,8 +103,53 @@ Since the cost of renting is zero, and given that landlords in Los Angeles compe
         p_{KC} &=& 0
     \end{eqnarray*}
 
-    Thus, the expected proportion of agents living in Los Angeles and Kansas City will be 50\% for each city. Additionally, the landlords in Kansas City will be indifferent between renting or not.
+    Thus, the expected proportion of agents living in Los Angeles and Kansas City will be 50\% for each city. Additionally, the landlords in Kansas City will be indifferent between renting or not.\\
 \end{myanswerbox}
+
+The expected proportion of agents demanding housing in LA and KC is: 
+
+\begin{eqnarray*}
+    \mathbb{E}[D_{LA}] &=& \mathbb{E}[D_{KC}] = 0.5\\
+\end{eqnarray*}
+    
+The expected occupancy in LA and KC is 66.67\% (with \( \frac{3}{4} \) being 100\%), which means that this is the expected proportion of landlords who will be generating profits from renting their properties in LA. From the total housing supply (1.5 adding LA and KC), 25\% is expected to generate profits (3/8 in LA of the total offered equivalent to 1.5). \\
+
+
+The expected surplus of the producers is: 
+
+
+\begin{eqnarray*}
+    \mathbb{E}[PS] &=& \mathbb{E}[PS_{LA}] + \mathbb{E}[PS_{KC}]\\
+    \mathbb{E}[PS] &=& (1/2*0.5 + 1/4*0) + (1/4 * 0 + 1/2*0.5)\\
+    \mathbb{E}[PS] &=& 0.50\\
+\end{eqnarray*}
+
+From the demand curves, it is possible to calculate the consumer surplus in each city:
+
+\begin{eqnarray*}
+    CS_{LA} &=& \int_{0.5}^{1}  D_{LA}(0.5) dx\\
+    CS_{LA} &=& \int_{0.5}^{1}  (1 - 0.5)dx\\
+    CS_{LA} &=& 0.25\\
+\end{eqnarray*}
+
+Similarly, the consumer surplus in Kansas City is:
+
+\begin{eqnarray*}
+    CS_{KC} &=& \int_{0.5}^{1}  D_{KC}(0.5) dx\\
+    CS_{KC} &=& \int_{0.5}^{1}  0.5dx\\
+    CS_{KC} &=& 0.25\\
+\end{eqnarray*}
+
+
+
+Therefore, the total welfare is:
+
+\begin{eqnarray*}
+    SW &=& CS_{LA} + CS_{KC} + \mathbb{E}[PS]\\
+    SW &=& 0.25 + 0.25 + 0.50\\
+    SW &=& 1\\
+\end{eqnarray*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tcolorbox}
@@ -72,7 +157,7 @@ Since the cost of renting is zero, and given that landlords in Los Angeles compe
 \end{tcolorbox}
 
 \begin{myanswerbox}
-    Since the addition of housing in either city does not change the cost structure, equation \ref{eq:equilibrium} remains valid, and therefore, the prices will be the same as in the previous clause.
+    Since the addition of housing in either city does not change the cost structure for renting and the preference of agents, equation \ref{eq:equilibrium} remains valid, and therefore, the prices will be the same as in the previous clause.
 \end{myanswerbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,20 +165,27 @@ Since the cost of renting is zero, and given that landlords in Los Angeles compe
     (d) Suppose we can build new housing at constant marginal cost \( c = 1/10 \) in both cities. What is the long-run equilibrium price? How many people live in each city?
 \end{tcolorbox}
 
-Landlords who already own a house have the incentive to rent at a price at least as high as the marginal cost of construction, thus making new landlords indifferent between building or not.
+The population mass is still indexed by \( v \), so the equilibrium condition \( \mathbb{E}[u_{LA}] = \mathbb{E}[u_{KC}] \) remains valid. However, the minimum price at which Kansas City landlords can rent is \( c \). At that price level, the demand for housing in Kansas City is \( D_{KC} = p_{LA} - c \), and the demand in LA is \( D_{LA} = 1 - (p_{LA} - c). \)\\
 
-In equilibrium:
+Given the equilibrium relationship: 
 
-\begin{equation*}
+    \begin{equation*}
     p_{LA} = 0.5 + p_{KC}
 \end{equation*}
 
-This condition must be met for agents to be indifferent between living in Los Angeles and Kansas City.\\
-
 \begin{myanswerbox}
-    If \( p_{KC} = 0.1 \), then \( p_{LA} = 0.6 \).\\
-    With this prices, the expected proportion of agents living in each city will be 50\%, landlords in Kansas City will be indifferent between renting or not, there are not incentives form Los Angeles landlords to rise prices, and in both cities new landlords will be indifferent between building or not.
+    
+    Therefore, the new set of prices is \( p_{LA} = 0.6 \) and \( p_{KC} = 0.1 \).\\
+
+    The expected demand for housing in Los Angeles and Kansas City is:
+
+    \begin{eqnarray*}
+        D_{KC} &=& p_{LA} - c = 0.6 - 0.1 = 0.5\\
+        D_{LA} &=& 1 - (p_{LA} - c) = 1 - (0.6 - 0.1) = 0.5\\
+    \end{eqnarray*}
+
 \end{myanswerbox}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,10 +193,40 @@ This condition must be met for agents to be indifferent between living in Los An
     (e) How much does social welfare increase from the extra building in (d)?
 \end{tcolorbox}
 
-\begin{myanswerbox}
-    In equilibrium, the proportion of agents living in each city is the same. Additionally, the addition of new housing at a marginal cost \( c \) implies an increase in prices by the same magnitude.\\
+\begin{eqnarray*}
+    CS_{LA} &=& \int_{p_{LA} - p_{KC}}^{1}  D_{LA}(p_{LA} - p_{KC}) dx\\
+    CS_{LA} &=& \int_{0.5}^{1}  (1 - 0.5)dx\\
+    CS_{LA} &=& 0.25\\
+\end{eqnarray*}
 
-    Due to the two aforementioned characteristics, the increase in social welfare is zero, as the fall in consumer surplus is exactly equal to the producer's profit increase. This is an example of a zero-sum game, where social welfare is unaffected by changes in the equilibrium price.
+Similarly, the consumer surplus in Kansas City is:
+
+\begin{eqnarray*}
+    CS_{KC} &=& \int_{p_{LA} - p_{KC}}^{1}  D_{KC}(p_{LA} - p_{KC}) dx\\
+    CS_{KC} &=& \int_{0.5}^{1}  0.5dx\\
+    CS_{KC} &=& 0.25\\
+\end{eqnarray*}
+
+The producer surplus is given by those landlords who are able to rent their properties, minus the ones who are not able to do so. If we assume that in the long run the proportion of agents that each city can accommodate remains at \( \frac{3}{4} \), then the producer surplus is:
+
+\begin{eqnarray*}
+    \mathbb{E}[PS] &=& \mathbb{E}[PS_{LA}] + \mathbb{E}[PS_{KC}]\\
+    \mathbb{E}[PS] &=& (1/2*0.5 - 1/4*0.1) + (1/4 * 0 + 1/4*0.5)\\
+    \mathbb{E}[PS] &=& 0.45\\
+\end{eqnarray*}
+
+Therefore, the total welfare is:
+
+\begin{eqnarray*}
+    SW &=& CS_{LA} + CS_{KC} + \mathbb{E}[PS]\\
+    SW &=& 0.25 + 0.25 + 0.45\\
+    SW &=& 0.95\\
+\end{eqnarray*}
+
+\begin{myanswerbox}
+    Assuming that the proportion of agents that Kansas City and Los Angeles can accommodate remains at \( \frac{3}{4} \), welfare falls from 1 to 0.95. This is because now the landlords who are not able to rent out their properties incur losses.
+
+    The loss in welfare will increase as a greater proportion of the population can be accommodated in each city, or conversely, if the proportion of the population that can be accommodated in each city decreases, the welfare will increase until a point where the aggregate offer in each city equalizes the expected demand for housing in each city.
 \end{myanswerbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

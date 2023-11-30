@@ -26,7 +26,7 @@ Furthermore:
 \end{eqnarray*}
 
 
-Because \(v\) is a continuous random variable.\\
+Because \(v\) is a continuous random variable distributed uniformly between zero and one, the probability of \(v\) being exactly zero is zero.\\
 
 Therefore, for every agent, it is preferable to live in Los Angeles, as it is highly unlikely that they have a null preference for the climate of Los Angeles.\\
 
@@ -120,8 +120,8 @@ The expected surplus of the producers is:
 
 \begin{eqnarray*}
     \mathbb{E}[PS] &=& \mathbb{E}[PS_{LA}] + \mathbb{E}[PS_{KC}]\\
-    \mathbb{E}[PS] &=& (1/2*0.5 + 1/4*0) + (1/4 * 0 + 1/2*0.5)\\
-    \mathbb{E}[PS] &=& 0.50\\
+    \mathbb{E}[PS] &=& (1/2*0.5 + 1/4 * 0) + (1/4 * 0 + 1/2 * 0)\\
+    \mathbb{E}[PS] &=& 0.25\\
 \end{eqnarray*}
 
 From the demand curves, it is possible to calculate the consumer surplus in each city:
@@ -140,14 +140,14 @@ Similarly, the consumer surplus in Kansas City is:
     CS_{KC} &=& 0.25\\
 \end{eqnarray*}
 
-
+These surpluses should be interpreted as the probability that agents have a utility higher than expected.\\
 
 Therefore, the total welfare is:
 
 \begin{eqnarray*}
     SW &=& CS_{LA} + CS_{KC} + \mathbb{E}[PS]\\
-    SW &=& 0.25 + 0.25 + 0.50\\
-    SW &=& 1\\
+    SW &=& 0.25 + 0.25 + 0.25\\
+    SW &=& 0.75\\
 \end{eqnarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -207,26 +207,26 @@ Similarly, the consumer surplus in Kansas City is:
     CS_{KC} &=& 0.25\\
 \end{eqnarray*}
 
-The producer surplus is given by those landlords who are able to rent their properties, minus the ones who are not able to do so. If we assume that in the long run the proportion of agents that each city can accommodate remains at \( \frac{3}{4} \), then the producer surplus is:
+The producer surplus is given by those landlords who are able to rent their properties. Due to the equilibrium condition and given that we are analyzing the long run, the expected supply of housing in each city is equal to the expected demand. Additionally, those landlords in Kansas City will rent at a price of \( c \), making no profits.\\
 
 \begin{eqnarray*}
     \mathbb{E}[PS] &=& \mathbb{E}[PS_{LA}] + \mathbb{E}[PS_{KC}]\\
-    \mathbb{E}[PS] &=& (1/2*0.5 - 1/4*0.1) + (1/4 * 0 + 1/4*0.5)\\
-    \mathbb{E}[PS] &=& 0.45\\
+    \mathbb{E}[PS] &=& (1/2*0.5) + (1/2 * 0)\\
+    \mathbb{E}[PS] &=& 0.25\\
 \end{eqnarray*}
 
 Therefore, the total welfare is:
 
 \begin{eqnarray*}
     SW &=& CS_{LA} + CS_{KC} + \mathbb{E}[PS]\\
-    SW &=& 0.25 + 0.25 + 0.45\\
-    SW &=& 0.95\\
+    SW &=& 0.25 + 0.25 + 0.25\\
+    SW &=& 0.75\\
 \end{eqnarray*}
 
 \begin{myanswerbox}
-    Assuming that the proportion of agents that Kansas City and Los Angeles can accommodate remains at \( \frac{3}{4} \), welfare falls from 1 to 0.95. This is because now the landlords who are not able to rent out their properties incur losses.
+    As the economy adjusts in the long term, the excess supply causes those suppliers who do not rent out their properties to incur losses. Due to this, they decide to exit the market until the supply adjusts to the expected demand. As the supply adjusts, the producers' surplus increases until it reaches the level calculated in section (b), where the marginal cost of renting was zero.\\
 
-    The loss in welfare will increase as a greater proportion of the population can be accommodated in each city, or conversely, if the proportion of the population that can be accommodated in each city decreases, the welfare will increase until a point where the aggregate offer in each city equalizes the expected demand for housing in each city.
+    The Social Welfare is calculated as \( SW = 0.75 \). There is no increase in social welfare because the probability of agents to exceed their expected utility is the same. Also, those landlords who remain in the market are making the same profits as in the case where the marginal cost of renting was zero.\\
 \end{myanswerbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

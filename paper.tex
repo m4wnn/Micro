@@ -61,13 +61,21 @@
 
 %=============================
 \input{misc/title}
-%\newpage
+{
+	\setstretch{1.1}
+	\input{misc/abstract}
+}
+\newpage
 
 %=============================
-\input{sections/question-1}
-\input{sections/question-2}
-\input{sections/question-3}
-\input{sections/question-4}
-\input{sections/question-5}
+\input{sections/introduction}
+\input{sections/concept}
+\input{sections/conclusion}
 
+\section{References}
+% the \nocite command leads to the whole bibliography
+% being displayed (without any \cite commands necessary).
+% remove this command in order to get the "normal" behavior.
+\nocite{*}
+\printbibliography[heading=none]
 \end{document}

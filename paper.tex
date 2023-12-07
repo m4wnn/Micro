@@ -4,6 +4,9 @@
 % Change the margins to 1 inch all around.
 \usepackage[margin=1in]{geometry}
 
+\usepackage{parskip}
+
+
 % font handling
 %\usepackage{fontspec}
 
@@ -29,11 +32,15 @@
 \usepackage{tcolorbox}
 \usepackage{amssymb}
 
+% for the bibliography
 \usepackage[
-	sorting=none,
+  backend=biber,
+  style=apa, % APA style
+	sorting=nyt,
 	minbibnames=8,
 	maxbibnames=9,
 	block=space,
+	defernumbers=true, % Only include cited references
 	backend=biber
 ]{biblatex}
 \bibliography{bibliography}
@@ -41,23 +48,6 @@
 \usepackage{lipsum}
 
 \begin{document}
-
-% Blue text box for answers.
-\newtcolorbox{myanswerbox}[1][]{
-  colback=blue!5!white, % Background color
-  colframe=blue!75!black, % Bourder color
-  fonttitle=\bfseries, %  Font style of the title
-  title=#1, %  Title
-  arc=0mm, %  Rounded corners
-  #1
-}
-
-\lstset{
-    language=Python,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{blue},
-    backgroundcolor=\color{lightgray}
-}
 
 %=============================
 \input{misc/title}

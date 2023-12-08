@@ -41,10 +41,58 @@ A special type of contract is the Winner-Takes-All (WTA). In the context of a sm
 \subsection{Polymarket}
 \label{subsec:polymarket}
 
+Polymarket is a web platform that facilitates the participation of agents in markets defined through smart contracts. The platform is merely an interface where agents can interact with the smart contracts defined on Polygon, a blockchain that operates on the secondary layer of Ethereum, designed to facilitate the creation and management of smart contracts \parencite{PolymarketLearn}.
 
-\lipsum[2]
+In Figure \ref{fig:polymarket}, an example of a predictive market on the Polymarket platform can be seen. It shows the main elements which are: \begin{enumerate*}[label=(\roman*)]
+\item the name of the market,
+\item the conditions under which the market is considered resolved,
+\item the information source that the oracles will consult,
+\item the date on which the market closes,
+\item the total amount of bets measured in dollars, and
+\item the price of the long and short positions.
+\end{enumerate*}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{img/polymarket.png}
+    \caption{Polymarket Platform}
+    \label{fig:polymarket}
+\end{figure}
+
+In these markets, the long position represents those agents who believe that the market will resolve as true, while the short position represents those agents who believe the opposite. In Figure \ref{fig:polymarket}, the long position (indicated in green) represents those agents who expect the FED to cut interest rates by May 2024, while the short position (indicated in red) represents those agents who expect the FED not to cut interest rates for the same date.
+    
+The price of the long and short positions add up to one, and the interpretation of this price is the probability that agents assign to the market resolving as true or false. In Figure \ref{fig:polymarket}, the price of the long position is 0.63, which means that the aggregated probability of agents expecting the FED to cut interest rates by May 2024 is 63\%. Complementarily, the price of the short position is 0.37, which means that the aggregated probability of agents expecting the FED not to cut interest rates by May 2024 is 37\%.
 
 \subsubsection{Supply and Demand Mechanism}
 \label{subsubsec:supply_and_demand_mechanism}
 
-\lipsum[2]
+The price of the long and short positions is determined through a supply and demand mechanism. This mechanism is recorded in the Order Book.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{img/order_book_yes.png}
+    \caption{Order Book for the Long Positon}
+    \label{fig:order_book_yes}
+\end{figure}
+
+In Figure \ref{fig:order_book_yes}, the Order Book for the long position can be observed. In the center, the last transaction made is shown, which determines the current price. In the upper part (called Ask), all the agents willing to sell their long positions at a certain price are listed, and in the lower part (called Bid), all the agents willing to buy long positions are found. In the order book only the unrealized orders are shown, that is, those orders that have not been matched. When an order is matched, the transaction is recorded in the blockchain, and the order is removed from the order book.
+ 
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{img/order_book_yes_bid.png}
+        \caption{Order Book for the Long Position: Bid}
+        \label{fig:order_book_yes_bid}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{img/order_book_yes_ask.png}
+        \caption{Order Book for the Long Position: Ask}
+        \label{fig:order_book_yes_ask}
+    \end{minipage}
+\end{figure}
+
+Orders in the Ask section are arranged such that those with the lowest price have priority. Conversely, orders in the Bid section are arranged  from the highest price to the lowest.
+    
+In both the Ask and Bid sections, agents set their prices according to the level of certainty they have that the contract will be executed in their favor. Buyers with low expectations are willing to enter the market only if the price of the share is low (Figure \ref{fig:order_book_yes_bid}). Conversely, sellers with high expectations are willing to leave the market only if the price of the share is high (Figure \ref{fig:order_book_yes_ask}).

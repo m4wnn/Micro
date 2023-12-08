@@ -1,7 +1,7 @@
 \section{Predictive Markets}
 \label{sec:predictive_markets}
 
-A prediction market, as commonly defined and the focus of this work, is a market where participants can trade and exchange contracts, and the payoffs are contingent on the outcomes of future events(\citeauthor{wolfers2004prediction}). This type of market has caught the attention of the media and various technology companies in recent years due to its ability to make more accurate predictions through its pricing. According to an article from \textcite{Roose_2023}, "Prediction markets offer a better way to search for truth — rewarding those who are good at forecasting by allowing them to make money off those who are bad at it, while settling on the facts in an unbiased way".
+A prediction market, as commonly defined and the focus of this work, is a market where participants can trade and exchange contracts, and the payoffs are contingent on the outcomes of future events(\citeauthor{wolfers2004prediction}). This type of market has caught the attention of the media and various technology companies in recent years due to its ability to make more accurate predictions through its pricing. According to an article from \textcite{roose2023wager}, "Prediction markets offer a better way to search for truth — rewarding those who are good at forecasting by allowing them to make money off those who are bad at it, while settling on the facts in an unbiased way".
 
 We could also understand prediction markets as a type of bet on future events. However, the significant difference from a traditional bet lies in how prices are set. A clear way to understand how prices are set is through the model proposed by  /textcite{wolfers2004prediction}  of a simple prediction market, where traders buy and sell an all-or-nothing contract that pays  \$1 if the future event predicted by the agent occurs and nothing otherwise.Under this model, traders have logarithmic utility and endogenously derive their trading activity given the contract price is \( \pi \). Thus, when deciding how many contracts \( x \) to buy, traders solve the following problem:
 
@@ -37,18 +37,26 @@ The previous model not only permits us to witness the mechanism through which pr
 
 According to Hayes (2023) “A winner-takes-all market refers to an economy in which the best performers are able to capture a very large share of the available rewards, while the remaining competitors are left with very little”. In the context of contracts used in prediction markets, this implies that the "winners," those who accurately predicted the outcomes, take all the winnings, resulting in the market being emptied of resources.In this work we will focus on Winner-Takes-All Contracts, since the prices of these contracts according to \textcite{Zitzewitz2004} are the ones that are closest to the real market's expectation of the probability that an event will occur (assuming risk neutrality).Table 1 shows an example with some additional characteristics of these contracts in predictive markets.
 
-begin{table}[ht]
-\centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Aspect}                & \textbf{Detail} \\ \midrule
-Contract Type                  & Winner-Take-All \\ \addlinespace
-Example                        & Event x: Apple successfully launches a new product. \\ \addlinespace
-Contract Cost and Payout       & Contract costs \$p. Pays \$1 if and only if event x occurs. \\ \addlinespace
-Bidding Mechanism              & Bid according to the value of \$p. \\ \addlinespace
-Market Expectation             & Reveals market expectation about the probability of event x occurring, denoted as p(x). \\ \addlinespace
-Implications for Investors     & Investors can use these contracts to speculate on the success or failure of future events. \\ \addlinespace
-Applications                   & Used in contexts of political elections, product launches, sports event predictions, etc. \\ \bottomrule
-\end{tabular}
-\caption{Description of Winner-Take-All Contracts in Prediction Markets}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Aspect}                & \textbf{Detail} \\ 
+        \midrule
+        Contract Type                  & Winner-Take-All \\ 
+        \addlinespace
+        Example                        & Event x: Apple successfully launches a new product. \\ 
+        \addlinespace
+        Contract Cost and Payout       & Contract costs \$p. Pays \$1 if and only if event x occurs. \\ 
+        \addlinespace
+        Bidding Mechanism              & Bid according to the value of \$p. \\ 
+        \addlinespace
+        Market Expectation             & Reveals market expectation about the probability of event x occurring, denoted as p(x). \\ 
+        \addlinespace
+        Implications for Investors     & Investors can use these contracts to speculate on the success or failure of future events. \\ 
+        \addlinespace
+        Applications                   & Used in contexts of political elections, product launches, sports event predictions, etc. \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{Description of Winner-Take-All Contracts in Prediction Markets}
 \end{table}

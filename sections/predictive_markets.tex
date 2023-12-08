@@ -5,29 +5,33 @@ A prediction market, as commonly defined and the focus of this work, is a market
 
 We could also understand prediction markets as a type of bet on future events. However, the significant difference from a traditional bet lies in how prices are set. A clear way to understand how prices are set is through the model proposed by  /textcite{wolfers2004prediction}  of a simple prediction market, where traders buy and sell an all-or-nothing contract that pays  /1 if the future event predicted by the agent occurs and nothing otherwise.
 
-Bajo este modelo los comerciantes tienen utilidad logarítmica y derivan endógenamente su actividad comercial dada el precio del contrato es \( \pi \). Así, al decidir cuántos contratos \( x \) comprar, los comerciantes resuelven el siguiente problema:
+Under this model, traders have logarithmic utility and endogenously derive their trading activity given the contract price is \( \pi \). Thus, when deciding how many contracts \( x \) to buy, traders solve the following problem:
 \begin{equation}
-    \max EU = q_j \log(y_j + x(1 - \pi)) + (1 - q_j) \log(y_j - x\pi)
+    \max U = q_j \log(y_j + x(1 - \pi)) + (1 - q_j) \log(y_j - x\pi)
 \end{equation}
-Donde:
+Where:
 
-- Comerciante \( j \)
-- Creencia del comerciante \( j \) de que el evento ocurrirá \( q_j \)
-- Niveles de riqueza (\( y \))
+- Trader \( j \)
+- Belief of trader \( j \) that the event will occur \( q_j \)
+- Wealth levels (\( y \))
 
-Se halla un optimo donde:
+An optimum is found where:
 \begin{equation}
     x_j^* = \frac{y_j(q_j - \pi)}{\pi(1 - \pi)}
 \end{equation}
 
-
-El mercado de predicción está en equilibrio cuando la oferta iguala a la demanda:
+The prediction market is in equilibrium when supply equals demand:
 \begin{equation}
-    \pi = \int_{-\infty}^{\infty} q f(q) dq
+    \int_{-\infty}^{\infty}\frac{y_j(q_j - \pi)}{\pi(1 - \pi)}f(q)dq = \int_{-\infty}^{\infty}\frac{y_j(\pi -q_j)}{\pi(1 - \pi)}f(q)dq\infty}^{\infty} q f(q) dq = q^-
 \end{equation}
 
-Así, en este modelo simple, los precios de mercado son iguales a la creencia media entre los comerciantes.
+And the next equilibrium price is reached:
 
+\begin{equation}
+    \pi = \int_{-\infty}^{\infty} q f(q) dq = q^-
+\end{equation}
+
+The previous model not only allows us to observe the process by which the price is established in a predictive market but also reaches a very relevant conclusion in which market prices are equal to the average belief among traders.
 
 \lipsum[2]
 

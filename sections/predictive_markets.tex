@@ -1,6 +1,33 @@
 \section{Predictive Markets}
 \label{sec:predictive_markets}
-A prediction market, as commonly defined and the focus of this work, is a market where participants can trade and exchange contracts, and the payoffs are contingent on the outcomes of future events(/citeauthor{wolfers2004prediction}). This type of market has caught the attention of the media and various technology companies in recent years due to its ability to make more accurate predictions through its pricing. According to an article from /textcite{Roose_2023}, "Prediction markets offer a better way to search for truth — rewarding those who are good at forecasting by allowing them to make money off those who are bad at it, while settling on the facts in an unbiased way".
+
+A prediction market, as commonly defined and the focus of this work, is a market where participants can trade and exchange contracts, and the payoffs are contingent on the outcomes of future events(\citeauthor{wolfers2004prediction}). This type of market has caught the attention of the media and various technology companies in recent years due to its ability to make more accurate predictions through its pricing. According to an article from \textcite{Roose_2023}, "Prediction markets offer a better way to search for truth — rewarding those who are good at forecasting by allowing them to make money off those who are bad at it, while settling on the facts in an unbiased way".
+
+We could also understand prediction markets as a type of bet on future events. However, the significant difference from a traditional bet lies in how prices are set. A clear way to understand how prices are set is through the model proposed by  /textcite{wolfers2004prediction}  of a simple prediction market, where traders buy and sell an all-or-nothing contract that pays  /1 if the future event predicted by the agent occurs and nothing otherwise.
+
+Bajo este modelo los comerciantes tienen utilidad logarítmica y derivan endógenamente su actividad comercial dada el precio del contrato es \( \pi \). Así, al decidir cuántos contratos \( x \) comprar, los comerciantes resuelven el siguiente problema:
+\begin{equation}
+    \max EU = q_j \log(y_j + x(1 - \pi)) + (1 - q_j) \log(y_j - x\pi)
+\end{equation}
+Donde:
+
+- Comerciante \( j \)
+- Creencia del comerciante \( j \) de que el evento ocurrirá \( q_j \)
+- Niveles de riqueza (\( y \))
+
+Se halla un optimo donde:
+\begin{equation}
+    x_j^* = \frac{y_j(q_j - \pi)}{\pi(1 - \pi)}
+\end{equation}
+
+
+El mercado de predicción está en equilibrio cuando la oferta iguala a la demanda:
+\begin{equation}
+    \pi = \int_{-\infty}^{\infty} q f(q) dq
+\end{equation}
+
+Así, en este modelo simple, los precios de mercado son iguales a la creencia media entre los comerciantes.
+
 
 \lipsum[2]
 

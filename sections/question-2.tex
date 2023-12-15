@@ -1,144 +1,119 @@
-\section{General Equilibrium}
+\section{Sales}
 
-There are two goods and \( J \) agents, \( j \in \{1, \ldots, J\} \). Each agent has identical utility \( u(x^j_1, x^j_2) = \sqrt{x^j_1} + \sqrt{x^j_2} \). Agent \( j \) is endowed with \( (\omega^j_1, \omega^j_2) \). We normalize the price of good 2, so the prices of the two goods are \( (p_1, p_2) = (p, 1) \). Denote aggregate endowments by \( \omega_1 = \sum_j \omega^j_1 \) and \( \omega_2 = \sum_j \omega^j_2 \).
+There are two firms $i \in \{1,2\}$ and three customers $\{A, B, C\}$. The firms choose prices $\{p_1,p_2\}$ simultaneously. Customer A only wants to buy from firm 1 and has a value of $v$. Customer B only wants to buy from firm 2 and has a value of $v$. Customer C values both products at $v$ and buys from the cheapest firm (and flips a coin if the prices are the same). There are no costs so, assuming $p_i \leq v$, firm $i$'s profits are
 
+\[
+\pi_i = 
+\begin{cases} 
+p_i & \text{if } p_i > p_j \\
+\frac{3}{2}p_i & \text{if } p_i = p_j \\
+2p_i & \text{if } p_i < p_j 
+\end{cases}
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{tcolorbox}
-    (a) What is agent \( j \)'s demand, \( x^j_1(p, \omega^j_1, \omega^j_2) \) and \( x^j_2(p, \omega^j_1, \omega^j_2) \)?
+    \begin{enumerate}
+        \item[(a)] Argue there is no pure strategy Nash equilibrium.
+    \end{enumerate}
 \end{tcolorbox}
 
-Solving the maximization problem:
-\begin{eqnarray*}
-\max_{x_1^j, x_2^j} U(x_1^j,x_2^j)&=&\sqrt{x_1^J}+\sqrt{x_2^J}\\
-s.t. \quad m^j&=&p(w_1^j)+w_2^j\\
-p(w_1^j)+w_2^j&>&p(x_1^j)+x_2^j\\
-\end{eqnarray*}
+Let's assume that there exists a Nash equilibrium in pure strategies. In this case, the problem for each firm is to maximize its profit given the optimal strategy of the opposing firm:
 
-Calculating the first order conditions:
-\begin{eqnarray*}
-\frac{\partial \mathcal{L}}{\partial x_1^J}&=&\frac{1}{2\sqrt{X_1^J}}-λp=0\\
-\frac{\partial \mathcal{L}}{\partial x_2^J}&=&\frac{1}{2\sqrt{X_2^J}}-λ=0\\
-\frac{\partial \mathcal{L}}{\partial \lambda}&=&p(w_1^j)+w_2^j-p(x_1^j)-x_2^j=0\\
-x_2^j&=&p(w_1^j)+w_2^j-p(x_1^j)\\
-\end{eqnarray*}
+\begin{equation*}
+    \max_{p_i} \pi_i(p_i, p_j^*)
+\end{equation*}
 
-Solving for $\lambda$:
-\begin{eqnarray*}
-\frac{1}{2\sqrt{X_2^J}}&=&\frac{1}{2p\sqrt{X_1^J}}\\
-\sqrt{X_1^J}&=&\frac{\sqrt{X_2^J}}{p}\\
-\sqrt{X_1^J}&=&(\frac{\sqrt{X_2^J}}{p})^2\\
-x_1^j&=&\frac{X_2^J}{p^2}\\
-x_1^j*p^2&=&x_2^j\\
-\end{eqnarray*}
+Where $p_j^*$ is the optimal strategy of the opposing firm. In the case of firm 1, it maximizes its profit when:
 
-Substituting in the budget constraint:
-\begin{eqnarray*}
-x_2^j&=&p(w_1^j)+w_2^j-p(\frac{X_2^J}{p^2})\\
-x_2^j&=&p(w_1^j)+w_2^j-(\frac{X_2^J}{p})\\
-x_2^j+(\frac{X_2^J}{p})&=&p(w_1^j)+w_2^j\\
-x_2^j&=&\frac{p(w_1^j)+w_2^j}{1+\frac{1}{p}}\\
-x_2^j&=&\frac{p(w_1^j)+w_2^j}{1+\frac{1}{p}}\\
-x_2^j&=&\frac{p(w_1^j)+w_2^j}{\frac{p}{p}+\frac{1}{p}}\\
-x_2^j&=&\frac{p(w_1^j)+w_2^j}{\frac{p+1}{p}}\\
-x_2^j&=&\frac{p(p(w_1^j)+w_2^j)}{p+1}=\frac{p^2(p(w_1^j)+w_2^j)}{p(p+1)}\\
-x_1^j&=&\frac{(p(w_1^j)+w_2^j)}{p(p+1)}\\
-\end{eqnarray*}
+\begin{equation*}
+    p_1^* = p_2^* - \epsilon_1, \quad \epsilon_1 > 0
+\end{equation*}
+
+We need to add the $\epsilon_1$ term to ensure that $p_1^* < p_2^*$, since otherwise the profit of firm 1 would be $3/2 p_1^*$, and, therefore, firm 1 wouldn't be maximizing its profit.
+
+Similarly, firm 2 maximizes its profit when:
+
+\begin{equation*}
+    p_2^* = p_1^* - \epsilon_2, \quad \epsilon_2 > 0
+\end{equation*}
+
+Substituting $p_2^*$ into the equation for $p_1^*$ and vice versa, it is obtained that:
+
+\begin{equation*}
+    p_1^* = p_1^* - \epsilon_2 - \epsilon_1 \implies \epsilon_1 + \epsilon_2 = 0
+\end{equation*}
 
 \begin{myanswerbox}
-    The j's demand for good 1 is:
-    \[ x^j_1(p, \omega^j_1, \omega^j_2) = \frac{(p(w_1^j)+w_2^j)}{p(p+1)} \] and for good 2 is: 
-    \[ x^j_2(p, \omega^j_1, \omega^j_2) = \frac{p^2(p(w_1^j)+w_2^j)}{p(p+1)} \]
+    Which is a contradiction, since $\epsilon_1, \epsilon_2 > 0$ in order to maximize their profits. Therefore, there does not exist a Nash equilibrium in pure strategies.
 \end{myanswerbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{tcolorbox}
-    (b) Show that agent \( j \)'s indirect utility is \( v(p, x^j_1, x^j_2) = \left[ \frac{1+p}{p} (\omega^j_1 + \omega^j_2) \right]^{1/2} \).
+    \begin{enumerate}
+        \item[(b)] We now derive the symmetric mixed strategy equilibrium. Suppose both firms choose random price with cdf $F(p)$ and support $[p,\bar{p}]$. Argue that $\bar{p} \leq v$. Write down firm 1's profit from price $p \in [p,\bar{p}]$.
+    \end{enumerate}
 \end{tcolorbox}
 
+The profit function for firm 1, given the optimal strategy of firm 2, is:
+
+\begin{equation*}
+    \pi(p) = p (1 - F(p)) + p F(p)
+\end{equation*}
+
+Because $F(p)$ represents the probability to choose a price lower that $p$, and $1 - F(p)$ the probability to choose a price higher than $p$.
+
 \begin{eqnarray*}
-v(X_1^j,X_2^j)&=&\sqrt{\frac{(p(w_1^j)+w_2^j)}{p(p+1)}}+\sqrt{\frac{p^2(p(w_1^j)+w_2^j)}{p(p+1)}}\\
-v(X_1^j,X_2^j)&=&\sqrt{\frac{(p(w_1^j)+w_2^j)}{p(p+1)}}+p\sqrt{\frac{(p(w_1^j)+w_2^j)}{p(p+1)}}\\
-v(X_1^j,X_2^j)&=&(1+p)\sqrt{\frac{(p(w_1^j)+w_2^j)}{p(p+1)}}\\
-v(X_1^j,X_2^j)&=&\sqrt{(1+p)^2\frac{(p(w_1^j)+w_2^j)}{p(p+1)}}\\
+    \pi(p) &=& p (1 - F(p)) + 2pF(p)\\
+    \pi(p) &=& p - pF(p) + 2pF(p)\\
+    \pi(p) &=& p (1 + F(p))
 \end{eqnarray*}
 
 \begin{myanswerbox}
-    \begin{eqnarray*}
-    v(X_1^j,X_2^j)&=&\sqrt{\frac{1+p}{p}(pw_1^j+w_2^j)}\\
-    \end{eqnarray*}
+    So the profit function for firm 1 (and 2) in terms of the cdf $F(p)$ is:
+
+    \begin{equation*}
+        \pi(p) = p \left(1 +  F(p) \right)
+    \end{equation*}
+
+    Consumers only buy if the price is lower than their valuation, so the maximum price a company can charge is \( v \). If it charged more, consumers would not buy and the company would not make any profit. Therefore, \( \bar{p} \leq v \).
 \end{myanswerbox}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{tcolorbox}
-    (c) Equating aggregate demand and the aggregate endowments, solve for equilibrium prices.
+    \begin{enumerate}
+        \item[(c)] Argue that $\bar{p} = v$ in equilibrium.
+        \item[(d)] Derive the distribution of prices $F(p)$ in equilibrium. What is the support of prices $[p, \bar{p}]$?
+    \end{enumerate}
 \end{tcolorbox}
 
+Because the purpose of the firms is to make profits, the lower bound of the support of prices is $p = 0$, so in that case the profit of firm 1 is:
+
+\begin{equation*}
+    \pi(0) = 0 \left(1 +  F(0) \right) = 0
+\end{equation*}
+
+In the case of the upper bound, the profit of firm 1 is:
+
+\begin{equation*}
+    \pi(\bar{p}) = \bar{p} \left(1 +  F(\bar{p}) \right)
+\end{equation*}
+
+If this is an equilibrium, then both firms should be indifferent between choosing this price and any other price in the support, including the case where both firms choose the same price. When both firms choose the same price, the profit of firm 1 is:
+
 \begin{eqnarray*}
-X_1&=&\sum_{j} \frac{p(w_1^j) + w_2^j}{p(p+1)} = \sum_{j} w_1^j\\
-X_1&=&\sum_{j} \frac{p(w_1^j) + w_2^j}{p(p+1)} = w_1\\
-X_1&=& \frac{p\sum_{j}(w_1^j) + \sum_{j}w_2^j}{p(p+1)} = w_1\\
+    \pi(\bar{p}) = \bar{p} \left(1 +  F(\bar{p}) \right) &=& \frac{3}{2} \bar{p}\\
+    1 +  F(\bar{p}) &=& \frac{3}{2}\\
+    F(\bar{p}) &=& \frac{1}{2}\\
 \end{eqnarray*}
 
-\begin{myanswerbox}
-    \begin{eqnarray*}
-        X_1&=& w_1\\
-        X_2&=& w_2\\
-    \end{eqnarray*}
+\begin{myanswerbox}[Answer to (d)]
+    To allow this possibility, the cdf $F(p)$ should be from a discrete distribution with a mass of $1/2$ at $\bar{p}$, and a mass of $1/2$ at $p = 0$, so the support of prices is $[0, \bar{p}]$ distributed according to a Bernoulli with parameter $1/2$.
 \end{myanswerbox}
 
-\begin{eqnarray*}
- \frac{p(w_1) + w_2}{p(p+1)} &=& w_1\\
- \frac{p(w_1) + w_2}{w_1} &=& p(p+1)\\
- p+\frac{w_2}{w_1} &=& p^2+p\\
-\frac{w_2}{w_1} &=& p^2\\
-\end{eqnarray*}
-
-\begin{myanswerbox}
-    \begin{eqnarray*}
-    \sqrt\frac{w_2}{w_1} &=& p\\
-    \end{eqnarray*}
+\begin{myanswerbox}[Answer to (c)]
+    In question (b) we argued that \( \bar{p} \leq v \) to ensure consumers buy the products, but because the distribution of prices follows a Bernoulli with parameter \( 1/2 \), the only possible way to cover the entire support range is when \( \bar{p} \) is \( v \).
 \end{myanswerbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}
-    (d) Show that agent \( j \) is a net seller of good 1 if
-    \[
-    \frac{\omega^j_1}{\omega^j_2} > \frac{\omega_1}{\omega_2}.
-    \]
-\end{tcolorbox}
-
-\begin{eqnarray*}
-\frac{w_2^j}{w_1^j}&<&\frac{w_2}{w_1}\\
-\frac{w_2^j}{w_1^j}&<&p^2\\
-x_1^j&=&\frac{(p(w_1^j)+w_2^j)}{p(p+1)}\\
-x_1^jp(p+1)&=&(p(w_1^j)+w_2^j)\\
-x_1^j(p^2+p)&=&(p(w_1^j)+w_2^j)\\
-\frac{x_1^j(p^2+p)}{w_1^j}-p&=&\frac{w_2^j}{w_1^j}\\
-\end{eqnarray*}
-
-From that results then:
-
-
-\begin{eqnarray*}
-\frac{x_1^j(p^2+p)}{w_1^j}-p&<&p^2\\
-\frac{x_1^j(p+1)}{w_1^j}-1&<&p\\
-\frac{x_1^j(p+1)}{w_1^j}&<&p+1\\
-(x_1^j)(p+1)&<&(p+1)(w_1^j)\\
-x_1^j&<&w_1^j\\
-\end{eqnarray*}
-
-\begin{myanswerbox}
-    Therefore, if \( \frac{\omega^j_1}{\omega^j_2} > \frac{\omega_1}{\omega_2} \), then \( x_1^j<w_1^j \), meaning that the optimal consumption of good 1 for agent $j$ is lower than the initial endowment, so agent $j$ is a net seller of good 1.
-\end{myanswerbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}
-        (e) Suppose an agent \( k \) finds a small amount of good 2, so their endowment \( \omega^k_2 \) rises a little. How does this impact the price \( p \)? Show that agent \( j \)'s utility increases if she is a net seller of good 1.
-\end{tcolorbox}
-
-If $w_2^k$ grows, $ w_2= \sum_{j} w_2^j$ will grow, and consequently, the price ($\sqrt\frac{w_2}{w_1} = p$) will increase.\\
-
-When agent j is a net seller, it implies an increase in $w_1^j$ compared to the case when she is not a net seller, therefore her utility ($v(X_1^j,X_2^j)=\sqrt{\frac{1+p}{p}(pw_1^j+w_2^j)}$) will increase.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

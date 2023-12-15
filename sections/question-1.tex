@@ -1,164 +1,87 @@
-\section{Dynamics of a Demand Shock}
+\section{Differentiated Bertrand}
 
-Consider the market for a single good. Market demand is \( X(p) = 1500 - 50p \), where \( p \) is the price of the good. There are many potential firms, each with cost function \( c(q_k) = 100 + q_k^2/4 \).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}
-    (a) Calculate the long-run equilibrium, in which firms are free to enter and exit. How much does each firm produce (\( q^* \))? What is the equilibrium price (\( p^* \))? How many firms enter (\( K^* \))?
-\end{tcolorbox}
-
-Each firm \( k \) will produce in their efficient point. This means:
-
-\begin{eqnarray*}
-MCG_k(q_k) = AC_k(q_k)
-\end{eqnarray*}
-
-From our cost function \( c_k(q_k) \):
-\begin{eqnarray*}
-MCG_k(q_k) &=& \frac{d}{dq_k} c_k(q_k) = \frac{q_k}{2}\\
-AC_k(q_k) &=& \frac{c_k(q_k)}{q_k} = \frac{100}{q_k} + \frac{q_k}{4}\\
-\end{eqnarray*}
-
-Solving for the firm \( k \):
-
-\begin{eqnarray*}
-MCG_k(q_k) &=& AC_k(q_k)\\
-\frac{q_k}{2} &=& \frac{100}{q_k} + \frac{q_k}{4}\\
-\frac{q_k^2}{4} &=& 100\\
-q_k &=& 20
-\end{eqnarray*}
-
-\begin{myanswerbox}
-    So each firm \( k \) is producing \( q^* = 20 \).
-\end{myanswerbox}
-
-We know that the supply function for the firm \( k \) is \( p = MCG_k(q_k) \). The price \( p \) is:
-
-\begin{eqnarray*}
-p &=& MCG_k(q_k) = MCG_k(20)\\
-p &=& \frac{q_k}{2} = \frac{20}{2} = 10
-\end{eqnarray*}
-
-\begin{myanswerbox}
-    The equilibrium price is \( p^* = 10 \).
-\end{myanswerbox}
-
-At this price, the demand is:
-
-\begin{eqnarray*}
-X(p) &=& 1500 - 50p\\
-X(10) &=& 1500 - 50(10)\\
-X(10) &=& 1000
-\end{eqnarray*}
-
-\begin{myanswerbox}
-  So the demand is \( X(10) = 1000 \).
-\end{myanswerbox}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}
-    (b) Suppose demand rises. New demand is given by \( \hat{X}(p) = 1800 - 50p \). Suppose demand rises. New demand is given by \( \hat{X}(p) = 1800 - 50p \).\\
+Two firms $i \in \{1, 2\}$ sell imperfectly substitutable goods. They compete in Bertrand fashion by posting prices $p_i \in [0, 1]$. When they set prices $(p_1, p_2)$ the demand for firm 1’s good is $q_1(p_1, p_2) = 1 - p_1 + p_2$ and the demand for firm 2’s good is $q_2(p_2, p_1) = 1 - p_2 + p_1$. There are no costs of production, so the profit functions of the firms are
     
-    In the very-short run, each firms' output is fixed. What is equilibrium price(\( p_v \))? How much profit does each firm make (\( \pi_v \))?
-\end{tcolorbox}
+\[
+\pi_1(p_1, p_2) = p_1(1 - p_1 + p_2)
+\]
+\[
+\pi_2(p_2, p_1) = p_2(1 - p_2 + p_1)
+\]
 
-In the very short-run there are only \( K = 50 \) producing \( q_k = 20 \) goods each, so the aggregate supply is \( Q = 1000 \).
-At that level of aggregated supply, and given the new aggregated demand:
-
-\begin{eqnarray*}
-\hat{X}(p) = 1800 - 50p = 1000 
-\end{eqnarray*}
-
-\begin{myanswerbox}
-    The new equilibrium price is \( p_v = 16 \)
-\end{myanswerbox}
-
-At that price, the profit of each firm is:
-
-\begin{eqnarray*}
-\pi_v = 16(20) - \left(100 + \frac{20^2}{4}\right)
-\end{eqnarray*}
-
-\begin{myanswerbox}
-So each firm is making a profit of \( \pi_k = 120 \). This level of profit is not sustainable because, as time passes, firms have incentives to produce one extra unit and take advantage of that price.
-\end{myanswerbox}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tcolorbox}
-    (c) In the short run, each firm can adjust its output to maximize its profits, but there is no entry or exit. What is equilibrium price (\( p_s \))? How much does each firm produce (\( q_s \))? How much profit does each firm make (\( \pi_s \))?
+(a) Calculate the best-response functions $BR_1(p_2)$ and $BR_2(p_1)$ and draw them in $(p_1, p_2)$-space.
 \end{tcolorbox}
 
-The number of producers remains the same, so \( K = 50 \). Now each firm wants to maximize their profit.
+For $BR_1(p_2)$:
 
 \begin{eqnarray*}
-\pi_k(q_k) = pq_k - c_k(q_k)
+\pi_1(p_1, p_2) &=& p_1(1 - p_1 + p_2)\\
+\frac{d\pi_1}{dp_1} &=& 1 - 2p_1 + p_2 = 0
 \end{eqnarray*}
 
-In order to maximize:
+From the F.O.C. we get:
 
 \begin{eqnarray*}
-\frac{d}{dq_k} \pi_k(q_k) &=& 0 \implies p - \frac{q_k}{2} = 0\\
-q_k &=& 2p
+p_2^* &=& 2p_1 - 1\\
+p_1^* &=& \frac{1 + p_2}{2}
 \end{eqnarray*}
 
-So the optimal aggregated supply is:
+In the same way, for $BR_2(p_1)$:
 
 \begin{eqnarray*}
-Q(p) = 50(2p) = 100p
+\pi_2(p_2, p_1) &=& p_2(1 - p_2 + p_1)\\
+\frac{d\pi_2}{dp_2} &=& 1 - 2p_2 + p_1 = 0
 \end{eqnarray*}
 
-In equilibrium \( \hat{X}(p) = Q(p) \):
+Therefore, from the F.O.C.:
 
 \begin{eqnarray*}
-1800 - 50p = 100p  \implies p_s = 12
-\end{eqnarray*}
-
-At this price, the aggregated demand is:
-
-\begin{eqnarray*}
-\hat{X}(p_s) = 1800 - 50p_s = 1800 - 50(12) = 1200
-\end{eqnarray*}
-
-So each firm produces:
-
-\begin{eqnarray*}
-q_s = \frac{1200}{50} = 24
-\end{eqnarray*}
-
-And makes a profit of:
-
-\begin{eqnarray*}
-\pi_s = (12)(24) - \left(100 - \frac{24^2}{4}\right) = 44
+p_1^* &=& 2p_2 - 1\\
+p_2^* &=& \frac{1 + p_1}{2}
 \end{eqnarray*}
 
 \begin{myanswerbox}
-    As a summary, in the short-run, the new equilibrium is:
+    So the best response functions are:
     \begin{eqnarray*}
-    K &=& 50\\
-    q_s &=& 24\\
-    p_s &=& 12\\
-    \pi_s &=& 44
+        p_1^* &=& \frac{1 + p_2}{2}\\
+        p_2^* &=& \frac{1 + p_1}{2}
     \end{eqnarray*}
 \end{myanswerbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[scale=0.4]{plots/plot1.png}
+    \caption{Best response functions}
+    \label{fig:my_label}
+\end{figure}
+
 \begin{tcolorbox}
-   (d) In the long run, there is free entry and exit. How much does each firm produce (\( q_e \))? What is equilibrium price (\( p_e \))? How many firms enter (\( K_e \))?
+    (b) Calculate the Nash equilibrium prices $(p_1^*, p_2^*)$.
 \end{tcolorbox}
     
-In the long run, assuming that each firm has the same cost function, each firm will produce \( q_c = 20 \) at a price \( p_c = 10 \), which is the efficient point identified prior to the expansion of demand.\\
+The Nash equilibrium is the intersection of the best response functions, so:
     
-To find the quantity of firms producing:
 \begin{eqnarray*}
-K_c = \frac{\hat{X}(p_c)}{q_c} = \frac{1800 - 50(10)}{20} = 65
+p_1^* &=& \frac{1 + p_2}{2}\\
+p_2^* &=& \frac{1 + p_1}{2}
 \end{eqnarray*}
-
+    
+Substituting $p_1^*$ into $p_2^*$:
+    
+\begin{eqnarray*}
+p_2^* &=& 2(2p_2 - 1) - 1\\
+p_2^* &=& 4p_2 - 3\\
+p_2^* &=& \frac{3}{3} = 1
+\end{eqnarray*}
+    
+and substituting $p_2^*$ into $p_1^*$:
+    
+\begin{eqnarray*}
+p_1^* &=& 2(1) - 1\\
+p_1^* &=& 1
+\end{eqnarray*}
+    
 \begin{myanswerbox}
-    In the long-run there will be \( K_c = 65 \) firms producing.
+    So the Nash equilibrium is $p_1^* = 1$ and $p_2^* = 1$.
 \end{myanswerbox}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

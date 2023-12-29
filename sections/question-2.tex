@@ -47,6 +47,8 @@ Substituting $p_2^*$ into the equation for $p_1^*$ and vice versa, it is obtaine
 
 \begin{myanswerbox}
     Which is a contradiction, since $\epsilon_1, \epsilon_2 > 0$ in order to maximize their profits. Therefore, there does not exist a Nash equilibrium in pure strategies.
+
+    Intuitively, both firms must choose a price lower than the other in order to maximize their profits. This iterative decision-making process will lead to a simulated price war where both firms will end up choosing a price of zero. However, in this scenario, both firms have incentives to raise their prices to $\bar{p}$ to maximize their profits, even though they are not earning the maximum of $2\bar{p}$. At this point, the iterative process will restart, leading to the same conclusions.
 \end{myanswerbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,30 +92,52 @@ Because $F(p)$ represents the probability to choose a price lower that $p$, and 
     \end{enumerate}
 \end{tcolorbox}
 
-Because the purpose of the firms is to make profits, the lower bound of the support of prices is $p = 0$, so in that case the profit of firm 1 is:
-
-\begin{equation*}
-    \pi(0) = 0 \left(1 +  F(0) \right) = 0
-\end{equation*}
-
-In the case of the upper bound, the profit of firm 1 is:
-
-\begin{equation*}
-    \pi(\bar{p}) = \bar{p} \left(1 +  F(\bar{p}) \right)
-\end{equation*}
-
-If this is an equilibrium, then both firms should be indifferent between choosing this price and any other price in the support, including the case where both firms choose the same price. When both firms choose the same price, the profit of firm 1 is:
+In equilibrium, both firms should be indifferent between any combination of prices, including the case where both firms choose the same price. Therefore, the expected profit is:
 
 \begin{eqnarray*}
-    \pi(\bar{p}) = \bar{p} \left(1 +  F(\bar{p}) \right) &=& \frac{3}{2} \bar{p}\\
-    1 +  F(\bar{p}) &=& \frac{3}{2}\\
-    F(\bar{p}) &=& \frac{1}{2}\\
+    \pi(p) = p \left(1 +  F(p) \right) &=& \frac{3}{2} p\\
+    1 +  F(p) &=& \frac{3}{2}\\
+    F(p) &=& \frac{1}{2}\\
 \end{eqnarray*}
 
-\begin{myanswerbox}[Answer to (d)]
-    To allow this possibility, the cdf $F(p)$ should be from a discrete distribution with a mass of $1/2$ at $\bar{p}$, and a mass of $1/2$ at $p = 0$, so the support of prices is $[0, \bar{p}]$ distributed according to a Bernoulli with parameter $1/2$.
+This result states that the equilibrium price accumulates a mass of \( \frac{1}{2} \) at \( p \), a single point. This kind of distribution functions are from a family called Dirac delta functions, which are defined as:
+
+\begin{equation*}
+    \delta(x) = 
+    \begin{cases}
+        \infty & \text{if } x = p\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{plots/dirac-cdf.png}
+    \caption{Dirac Delta CDF Centered in Zero}
+    \label{fig:dirac-delta-cdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{plots/dirac-pdf.png}
+    \caption{Dirac Delta PDF Centered in Zero}
+    \label{fig:dirac-delta-pdf}
+\end{figure}
+
+\begin{myanswerbox}
+    \textbf{Answer (c), (d)}:
+    As we argued, the pdf of the equilibrium price follows a Dirac delta function centered in the equilibrium price. the function is defined as:
+    
+\begin{equation*}
+    f(x) = 
+    \begin{cases}
+        \infty & \text{if } x = p\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+
 \end{myanswerbox}
 
-\begin{myanswerbox}[Answer to (c)]
-    In question (b) we argued that \( \bar{p} \leq v \) to ensure consumers buy the products, but because the distribution of prices follows a Bernoulli with parameter \( 1/2 \), the only possible way to cover the entire support range is when \( \bar{p} \) is \( v \).
+\begin{myanswerbox}
+    As we explored in the previous questions, the equilibrium price should be lower or equal to the customer's valuation \( v \) in order to ensure at least one customer buys the product. Also, if the price is lower than \( v \), firms have incentives to start a price war with no equilibrium. Therefore, the equilibrium price is \( v \), and the support of the Dirac delta function is \([v, v]\), even though the function is defined for all real numbers.
 \end{myanswerbox}
